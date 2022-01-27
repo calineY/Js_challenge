@@ -8,6 +8,16 @@ var blue=$("#blue");
 var order=[];
 var clicked=0;
 
+//Audio
+var redAudio = new Audio("sounds/red.mp3");
+var greenAudio = new Audio('sounds/green.mp3');
+var yellowAudio = new Audio('sounds/yellow.mp3');
+var blueAudio = new Audio('sounds/blue.mp3');
+var wrongAudio = new Audio('sounds/wrong.mp3');
+var sounds = [0, greenAudio, redAudio, yellowAudio, blueAudio];
+var order=[];
+var clicked=0;
+
 $(document).keypress(function() {
     title.text(`Level ${level}`);
     //Enable mouse event listeners
@@ -19,8 +29,38 @@ $(document).keypress(function() {
 });
 
 function greenClick(){
-    console.log("working");
+    green.addClass("pressed");
+    setTimeout(function(){
+        green.removeClass("pressed");
+    },100);
+    clicked=1;
+    checkInput();
 }
+function redClick(){
+    red.addClass("pressed");
+    setTimeout(function(){
+        red.removeClass("pressed");
+    },100);
+    clicked=2;
+    checkInput();
+}
+function yellowClick(){
+    yellow.addClass("pressed");
+    setTimeout(function(){
+        yellow.removeClass("pressed");
+    },100);
+    clicked=3;
+    checkInput();
+}
+function blueClick(){
+    blue.addClass("pressed");
+    setTimeout(function(){
+        blue.removeClass("pressed");
+    },100);
+    clicked=4;
+    checkInput();
+}
+
 
 
 function play(){
