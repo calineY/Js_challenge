@@ -61,32 +61,63 @@ function blueClick(){
     checkInput();
 }
 
+function checkInput(){ 
+    if (clicked!=order[idx]){
+        wrongAudio.play();
+        title.text("Game over, press any key to restart.");
+        //Disable mouse event listeners
+        green.unbind("click",greenClick);
+        red.unbind("click",redClick);
+        blue.unbind("click",blueClick);
+        yellow.unbind("click",yellowClick);
+        resetGame();
+    }
+    else{
+        sounds[clicked].play();
+        idx++;
+        if(idx == level){
+            level++;
+            idx = 0;
+            setTimeout(function(){play()}, 1000);
+        }
+    }
+}
 
-
+function resetGame(){
+    level = 1;
+    idx = 0;
+    order = [];
+}
+var rand_color=0;
 function play(){
     title.textContent=`Level ${level}`;
     rand_color=Math.floor(Math.random()*4)+1;
     order.push(rand_color);
+
     if (rand_color==1){
         green.css("opacity","0.1");
+        greenAudio.play()
         setTimeout(function() {
             green.css("opacity","1");
-        }, 100);
+        }, 200);
     }
     else if (rand_color==2){
         red.css("opacity","0.1");
+        redAudio.play()
         setTimeout(function() {
             red.css("opacity","1");
-        }, 100);
+        }, 200);
     }
     else if (rand_color==3){
         yellow.css("opacity","0.1");
+        yellowAudio.play()
         setTimeout(function() {
             yellow.css("opacity","1");
         }, 100);
     }
     else if (rand_color==4){
         blue.css("opacity","0.1");
+        blueAudio.play()
         setTimeout(function() {
             blue.css("opacity","1");
         }, 100);
