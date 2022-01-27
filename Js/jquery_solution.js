@@ -14,8 +14,8 @@ var greenAudio = new Audio('sounds/green.mp3');
 var yellowAudio = new Audio('sounds/yellow.mp3');
 var blueAudio = new Audio('sounds/blue.mp3');
 var wrongAudio = new Audio('sounds/wrong.mp3');
-var sounds = [0, greenAudio, redAudio, yellowAudio, blueAudio];
-var order=[];
+var sounds = [0, greenAudio, redAudio, yellowAudio, blueAudio]; //array of audios used when user loses
+var order=[]; //to save order of colors to be clicked
 var clicked=0;
 
 $(document).keypress(function() {
@@ -88,6 +88,7 @@ function resetGame(){
     idx = 0;
     order = [];
 }
+
 var rand_color=0;
 function play(){
     title.textContent=`Level ${level}`;
@@ -95,7 +96,7 @@ function play(){
     order.push(rand_color);
 
     if (rand_color==1){
-        green.css("opacity","0.1");
+        green.css("opacity","0.1"); //fade out then in
         greenAudio.play()
         setTimeout(function() {
             green.css("opacity","1");
