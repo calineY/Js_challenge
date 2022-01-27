@@ -7,11 +7,11 @@ var yellow=document.getElementById("yellow");
 var blue=document.getElementById("blue");
 
 //Audio
-var redAudio = new Audio('C:\\Users\\user\\Documents\\SEFactory\\FSW_Files\\Js_challenge\\Js\\sounds\\red.mp3');
-var greenAudio = new Audio('C:\\Users\\user\\Documents\\SEFactory\\FSW_Files\\Js_challenge\\Js\\sounds\\green.mp3');
-var yellowAudio = new Audio('C:\\Users\\user\\Documents\\SEFactory\\FSW_Files\\Js_challenge\\Js\\sounds\\yellow.mp3');
-var blueAudio = new Audio('C:\\Users\\user\\Documents\\SEFactory\\FSW_Files\\Js_challenge\\Js\\sounds\\blue.mp3');
-var wrongAudio = new Audio('C:\\Users\\user\\Documents\\SEFactory\\FSW_Files\\Js_challenge\\Js\\sounds\\wrong.mp3')
+var redAudio = new Audio('./sounds/red.mp3');
+var greenAudio = new Audio('./sounds/green.mp3');
+var yellowAudio = new Audio('./sounds/yellow.mp3');
+var blueAudio = new Audio('./sounds/blue.mp3');
+var wrongAudio = new Audio('./sounds/wrong.mp3');
 var sounds = [0, greenAudio, redAudio, yellowAudio, blueAudio];
 var order=[];
 var clicked=0;
