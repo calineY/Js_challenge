@@ -1,5 +1,6 @@
 var level=1;
 var idx = 0;
+var body=document.getElementsByTagName("body")[0];
 var title=document.getElementById("title");
 var green=document.getElementById("green");
 var red=document.getElementById("red");
@@ -63,6 +64,8 @@ function checkInput(){
     if (clicked!=order[idx]){
         wrongAudio.play();
         title.textContent="Game over, press any key to restart.";
+        body.classList.add("red");
+        setTimeout(function(){body.classList.remove("red")},300);
         //Disable mouse event listeners
         green.removeEventListener("click",greenClick);
         red.removeEventListener("click",redClick);

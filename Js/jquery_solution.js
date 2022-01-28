@@ -1,5 +1,6 @@
 var level=1;
 var idx = 0;
+var body=$("body");
 var title=$("#title");
 var green=$("#green");
 var red=$("#red");
@@ -64,6 +65,8 @@ function blueClick(){
 function checkInput(){ 
     if (clicked!=order[idx]){
         wrongAudio.play();
+        body.addClass("red");
+        setTimeout(function(){body.removeClass("red")},300);
         title.text("Game over, press any key to restart.");
         //Disable mouse event listeners
         green.unbind("click",greenClick);
@@ -91,7 +94,7 @@ function resetGame(){
 
 var rand_color=0;
 function play(){
-    title.textContent=`Level ${level}`;
+    title.text(`Level ${level}`);
     rand_color=Math.floor(Math.random()*4)+1;
     order.push(rand_color);
 
