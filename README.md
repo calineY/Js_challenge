@@ -4,7 +4,7 @@ A game where the player should memorize the order of flashing squares and try to
 
 ## The game
 Below is a short gif of the game being played.
-<img src="./chrome-capture.gif" alt="game gif">
+<p><img src="./chrome-capture.gif" alt="game gif"></p>
 
 ## Play game
 
