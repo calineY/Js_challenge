@@ -2,6 +2,10 @@
 
 A game where the player should memorize the order of flashing squares and try to repeat the same pattern to level up.
 
+## The game
+Below is a short gif of the game being played.
+![Alt Text](./chrome-capture.gif)
+
 ## Play game
 
 Click on [play](https://caliney.github.io/Js_challenge/) to start playing or paste the link below in your browser.
@@ -22,12 +26,14 @@ https://caliney.github.io/Js_challenge/
 The game has two .js files. One JavaScript file and one jQuery file, and they both serve the same purpose.
 The game is now linked to the jQuery file, to link it to the JavaScript file please do the below changes in the index.html file:
 
+>JavaScript linked, jQuery commented out.
 ```
 <!--<script src="./Js/js_solution.js" type="text/javascript"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./Js/jquery_solution.js" type="text/javascript"></script>
 
 ```
+>jQuery linked, JavaScript commented out.
 ```
 <script src="./Js/js_solution.js" type="text/javascript"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
